@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paper Crane Gardens | Naturalistic Landscape Design, Portland Oregon</title>
+<meta name="description" content="Paper Crane Gardens is a Portland, Oregon landscape design studio creating naturalistic, coastal-inspired gardens across the Pacific Northwest. Soft textures, organic materials, ecological planting — gardens that feel discovered, not designed.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,200..700;1,9..144,200..700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+:root {
+  --parchment:    #F8F5EF;
+  --parchment-dk: #EDE8DE;
+  --celadon:      #DDE8DC;
+  --celadon-deep: #B8CEB6;
+  --charcoal:     #17161A;
+  --charcoal-soft:#2C2B30;
+  --clay:         #B8644A;
+  --clay-light:   #CA7D64;
+  --clay-pale:    #F0E0D8;
+  --ink:          #1A1918;
+  --ink-mid:      #4A4744;
+  --ink-muted:    #7A7672;
+  --ink-faint:    #AAA69E;
+  --border:       rgba(26,25,24,0.10);
+  --border-strong:rgba(26,25,24,0.18);
+  --f-display: 'Fraunces', Georgia, serif;
+  --f-body:    'DM Sans', system-ui, sans-serif;
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+body { font-family: var(--f-body); background: var(--parchment); color: var(--ink); overflow-x: hidden; }
+img { display: block; max-width: 100%; }
+a { text-decoration: none; color: inherit; }
+button { cursor: pointer; font-family: var(--f-body); border: none; background: none; }
+body::after {
+  content:''; position:fixed; inset:0; pointer-events:none; z-index:9000; opacity:0.025;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23g)'/%3E%3C/svg%3E");
+  background-size:200px;
+}
+.wrap      { max-width:1320px; margin:0 auto; padding:0 clamp(1.5rem,5vw,4.5rem); }
+.wrap--mid { max-width:1000px; margin:0 auto; padding:0 clamp(1.5rem,5vw,4.5rem); }
+.wrap--slim{ max-width:740px;  margin:0 auto; padding:0 clamp(1.5rem,5vw,4.5rem); }
+.t-display { font-family:var(--f-display); font-size:clamp(3.5rem,9vw,8.5rem); font-weight:300; line-height:0.93; letter-spacing:-0.02em; }
+.t-h1      { font-family:var(--f-display); font-size:clamp(2.4rem,5vw,5rem);    font-weight:300; line-height:1.0;  letter-spacing:-0.01em; }
+.t-h2      { font-family:var(--f-display); font-size:clamp(1.9rem,3.5vw,3.2rem);font-weight:300; line-height:1.1;  letter-spacing:-0.005em;}
+.t-h3      { font-family:var(--f-display); font-size:clamp(1.3rem,2.5vw,2rem);  font-weight:400; line-height:1.2; }
+.t-body    { font-size:1rem;    line-height:1.8;  color:var(--ink-mid); font-weight:300; }
+.t-body-sm { font-size:.875rem; line-height:1.75; color:var(--ink-muted);font-weight:300;}
+.eyebrow { display:inline-flex; align-items:center; gap:.65rem; margin-bottom:1.5rem; }
+.eyebrow__line { width:22px; height:1px; background:var(--clay); flex-shrink:0; }
+.eyebrow span { font-size:.64rem; font-weight:500; letter-spacing:.2em; text-transform:uppercase; color:var(--clay); }
+.btn { display:inline-flex; align-items:center; gap:.65rem; font-family:var(--f-body); font-size:.68rem; font-weight:500; letter-spacing:.14em; text-transform:uppercase; padding:.9rem 2rem; border-radius:1px; transition:all .3s var(--ease); cursor:pointer; border:none; }
+.btn--clay    { background:var(--clay); color:white; }
+.btn--clay:hover { background:var(--clay-light); box-shadow:0 6px 20px rgba(184,100,74,.3); }
+.btn--outline { background:transparent; color:var(--ink); border:1px solid var(--border-strong); }
+.btn--outline:hover { border-color:var(--clay); color:var(--clay); }
+.btn--ghost-wht { background:transparent; color:white; border:1px solid rgba(255,255,255,.4); }
+.btn--ghost-wht:hover { background:rgba(255,255,255,.1); border-color:rgba(255,255,255,.7); }
+.btn svg { flex-shrink:0; transition:transform .3s var(--ease); }
+.btn:hover svg { transform:translateX(3px); }
+.nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:1.75rem clamp(1.5rem,5vw,4.5rem); display:flex; align-items:center; justify-content:space-between; transition:padding .5s var(--ease), background .5s var(--ease), border-color .5s; border-bottom:1px solid transparent; }
+.nav.scrolled { padding-top:1.1rem; padding-bottom:1.1rem; background:rgba(248,245,239,.96); backdrop-filter:blur(16px) saturate(1.2); border-color:var(--border); }
+.nav.solid     { padding-top:1.1rem; padding-bottom:1.1rem; background:rgba(248,245,239,.98); border-color:var(--border); }
+.nav__logo { height:36px; transition:opacity .3s; }
+.nav__logo:hover { opacity:.65; }
+.nav__logo--wht { display:block; }
+.nav__logo--blk { display:none; }
+.nav.scrolled .nav__logo--wht, .nav.solid .nav__logo--wht { display:none; }
+.nav.scrolled .nav__logo--blk, .nav.solid .nav__logo--blk { display:block; }
+.nav__links { display:flex; align-items:center; gap:2.5rem; list-style:none; }
+.nav__links a { font-size:.68rem; font-weight:400; letter-spacing:.14em; text-transform:uppercase; color:rgba(255,255,255,.75); transition:color .3s; position:relative; }
+.nav__links a::after { content:''; position:absolute; bottom:-2px; left:0; right:100%; height:1px; background:var(--clay-light); transition:right .35s var(--ease); }
+.nav__links a:hover { color:white; }
+.nav__links a:hover::after { right:0; }
+.nav__links a.active { color:white; }
+.nav__links a.active::after { right:0; }
+.nav.scrolled .nav__links a, .nav.solid .nav__links a { color:var(--ink-mid); }
+.nav.scrolled .nav__links a.active, .nav.solid .nav__links a.active { color:var(--clay); }
+.nav.scrolled .nav__links a.active::after, .nav.solid .nav__links a.active::after { background:var(--clay); }
+.nav__cta { font-size:.64rem; font-weight:500; letter-spacing:.14em; text-transform:uppercase; padding:.65rem 1.35rem; border:1px solid rgba(255,255,255,.45); color:white; border-radius:1px; transition:all .3s var(--ease); }
+.nav__cta:hover { background:rgba(255,255,255,.12); border-color:rgba(255,255,255,.8); }
+.nav.scrolled .nav__cta, .nav.solid .nav__cta { border-color:var(--clay); color:var(--clay); }
+.nav.scrolled .nav__cta:hover, .nav.solid .nav__cta:hover { background:var(--clay); color:white; }
+.nav__burger { display:none; flex-direction:column; gap:5px; padding:2px; }
+.nav__burger span { display:block; width:22px; height:1.5px; background:white; transition:all .3s; }
+.nav.scrolled .nav__burger span, .nav.solid .nav__burger span { background:var(--ink); }
+.nav__panel { position:fixed; inset:0; background:var(--parchment); z-index:200; display:flex; flex-direction:column; padding:2.5rem clamp(1.5rem,5vw,4.5rem); transform:translateY(-100%); transition:transform .5s var(--ease); }
+.nav__panel.open { transform:translateY(0); }
+.nav__panel-head { display:flex; justify-content:space-between; align-items:center; margin-bottom:3rem; }
+.nav__panel-logo { height:32px; }
+.nav__panel-close { font-size:1.2rem; color:var(--ink-mid); padding:.25rem; line-height:1; }
+.nav__panel ul { list-style:none; display:flex; flex-direction:column; gap:0; }
+.nav__panel ul li { border-bottom:1px solid var(--border); }
+.nav__panel ul a { display:block; padding:1.1rem 0; font-family:var(--f-display); font-size:1.6rem; font-weight:300; color:var(--ink); transition:color .2s; }
+.nav__panel ul a:hover, .nav__panel ul a.active { color:var(--clay); }
+.nav__panel-cta { margin-top:2.5rem; display:inline-block; padding:1rem 2rem; background:var(--clay); color:white; font-size:.68rem; font-weight:500; letter-spacing:.14em; text-transform:uppercase; border-radius:1px; transition:background .3s; }
+.nav__panel-cta:hover { background:var(--clay-light); }
+.footer { background:var(--charcoal); padding:5rem 0 2.5rem; }
+.footer__top { display:grid; grid-template-columns:1.6fr 1.2fr; gap:4rem; padding-bottom:4rem; border-bottom:1px solid rgba(255,255,255,.05); margin-bottom:2.5rem; }
+.footer__brand { display:flex; flex-direction:column; gap:1.25rem; }
+.footer__logo { width:50%; height:auto; max-width:100%; opacity:.95; display:block; }
+.footer__tagline { font-family:var(--f-display); font-size:.975rem; font-style:italic; font-weight:300; color:rgba(248,245,239,.3); line-height:1.5; }
+.footer__about { font-size:.82rem; line-height:1.7; color:rgba(248,245,239,.25); }
+.footer__social { display:flex; gap:.6rem; margin-top:.5rem; }
+.footer__social a { width:34px; height:34px; border-radius:50%; border:1px solid rgba(255,255,255,.08); display:flex; align-items:center; justify-content:center; transition:all .3s; }
+.footer__social a:hover { border-color:var(--clay); background:rgba(184,100,74,.1); }
+.footer__col h4 { font-size:.62rem; font-weight:500; letter-spacing:.18em; text-transform:uppercase; color:rgba(248,245,239,.4); margin-bottom:1.25rem; }
+.footer__links { list-style:none; display:flex; flex-direction:column; gap:.6rem; }
+.footer__links a { font-size:.82rem; color:rgba(248,245,239,.3); transition:color .3s; }
+.footer__links a:hover { color:var(--parchment); }
+.footer__contact-line { font-size:.82rem; color:rgba(248,245,239,.3); line-height:1.65; margin-bottom:.35rem; }
+.footer__bottom { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; font-size:.68rem; letter-spacing:.06em; color:rgba(248,245,239,.18); }
+.footer__bottom-right { display:flex; gap:1rem; flex-wrap:wrap; }
+.footer__badge { font-size:.58rem; letter-spacing:.12em; text-transform:uppercase; color:rgba(248,245,239,.18); padding:.3rem .7rem; border:1px solid rgba(255,255,255,.06); border-radius:20px; }
+.reveal { opacity:0; transform:translateY(24px); transition:opacity .75s var(--ease), transform .75s var(--ease); }
+.reveal.up { opacity:1; transform:none; }
+.d1 { transition-delay:.08s; } .d2 { transition-delay:.16s; } .d3 { transition-delay:.24s; } .d4 { transition-delay:.32s; }
+.page-header { background:var(--charcoal); padding:clamp(7rem,14vw,11rem) 0 clamp(3.5rem,6vw,5rem); position:relative; overflow:hidden; }
+.page-header::before { content:''; position:absolute; bottom:-30%; left:-10%; width:60%; height:100%; background:radial-gradient(ellipse, rgba(184,100,74,.07) 0%, transparent 70%); pointer-events:none; }
+.page-header__eyebrow { margin-bottom:1.25rem; }
+.page-header__eyebrow .eyebrow__line { background:var(--clay); }
+.page-header__eyebrow span { color:var(--clay); }
+.page-header__title { font-family:var(--f-display); font-size:clamp(3rem,7vw,6.5rem); font-weight:200; line-height:.95; letter-spacing:-.025em; color:var(--parchment); }
+.page-header__title em { font-style:italic; color:var(--clay-light); }
+.page-header__sub { font-size:clamp(.9rem,1.8vw,1.05rem); line-height:1.8; color:rgba(248,245,239,.45); max-width:520px; margin-top:1.5rem; font-weight:300; }
+.manifesto-band { background:var(--parchment-dk); padding:2.75rem 0; overflow:hidden; border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
+.manifesto-band__inner { display:flex; gap:4rem; animation:ticker 28s linear infinite; white-space:nowrap; }
+.manifesto-band__item { font-family:var(--f-display); font-size:clamp(1rem,2vw,1.2rem); font-weight:300; color:var(--ink-muted); flex-shrink:0; }
+.manifesto-band__item.mark { font-style:italic; color:var(--clay); }
+@keyframes ticker { from { transform:translateX(0); } to { transform:translateX(-50%); } }
+.gallery { display:grid; grid-template-columns:2.2fr 1fr 1fr; grid-template-rows:380px 280px; gap:3px; background:var(--charcoal); }
+.gallery__cell { overflow:hidden; position:relative; }
+.gallery__cell img { width:100%; height:100%; object-fit:cover; filter:sepia(.2) saturate(.75) brightness(.95); transition:transform .9s var(--ease), filter .5s; }
+.gallery__cell:hover img { transform:scale(1.06); filter:sepia(.1) saturate(.9) brightness(1.02); }
+.gallery__cell--tall { grid-row:span 2; }
+.gallery__caption { position:absolute; bottom:0; left:0; right:0; padding:1rem 1.25rem; background:linear-gradient(to top, rgba(23,22,26,.6), transparent); opacity:0; transition:opacity .4s; }
+.gallery__cell:hover .gallery__caption { opacity:1; }
+.gallery__caption span { font-size:.6rem; letter-spacing:.16em; text-transform:uppercase; color:rgba(248,245,239,.7); }
+@media(max-width:1100px){ .footer__top { grid-template-columns:1fr 1fr; gap:2.5rem; } }
+@media(max-width:800px){ .nav__links,.nav__cta { display:none; } .nav__burger { display:flex; } .gallery { grid-template-columns:1fr 1fr; grid-template-rows:200px 200px 180px; } .gallery__cell--tall { grid-row:auto; } .footer__top { grid-template-columns:1fr; } }
+@media(max-width:480px){ .gallery { grid-template-columns:1fr; grid-template-rows:repeat(5,200px); } }
+</style>
+
+<style>
+.hero { min-height:100dvh; display:grid; grid-template-columns:1fr 1fr; position:relative; }
+.hero__left { background:var(--charcoal); display:flex; flex-direction:column; justify-content:space-between; padding:clamp(6rem,10vw,9rem) clamp(1.5rem,5vw,4.5rem) clamp(2.5rem,5vw,4rem); position:relative; overflow:hidden; }
+.hero__left::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse 80% 60% at 20% 100%, rgba(184,100,74,.08) 0%, transparent 70%); pointer-events:none; }
+.hero__headline { position:relative; z-index:1; }
+.hero__headline .line { display:block; color:var(--parchment); font-family:var(--f-display); font-size:clamp(3.2rem,6vw,7rem); font-weight:250; line-height:.96; letter-spacing:-.02em; }
+.hero__headline .line.italic { font-style:italic; color:var(--clay-light); font-weight:300; }
+.hero__sub { font-size:clamp(.9rem,1.6vw,1.05rem); line-height:1.75; color:rgba(248,245,239,.5); max-width:420px; margin-top:2.5rem; font-weight:300; position:relative; z-index:1; }
+.hero__bottom { display:flex; flex-direction:column; gap:5rem; margin-top:3rem; position:relative; z-index:1; }
+.hero__actions { display:flex; align-items:center; gap:1rem; flex-wrap:wrap; }
+.hero__creds { display:flex; flex-wrap:wrap; gap:.5rem; }
+.hero__cred { font-size:.6rem; font-weight:500; letter-spacing:.14em; text-transform:uppercase; color:rgba(248,245,239,.3); padding:.35rem .75rem; border:1px solid rgba(248,245,239,.08); }
+.hero__scroll-hint { display:flex; align-items:center; gap:.65rem; }
+.hero__scroll-hint span { font-size:.6rem; letter-spacing:.2em; text-transform:uppercase; color:rgba(248,245,239,.25); }
+.hero__scroll-line { width:32px; height:1px; background:linear-gradient(to right, rgba(184,100,74,.5), transparent); }
+.hero__right { position:relative; overflow:hidden; }
+.hero__right img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 30%; filter:sepia(.25) saturate(.75) brightness(.95); transition:transform 8s ease-out; transform:scale(1.06); }
+.hero__right img.loaded { transform:scale(1); }
+.hero__right::after { content:''; position:absolute; inset:0; background:linear-gradient(160deg,rgba(184,100,74,.12) 0%,transparent 60%),linear-gradient(to bottom,rgba(23,22,26,.2) 0%,transparent 40%); }
+.hero__label { position:absolute; right:1.5rem; bottom:2rem; z-index:2; writing-mode:vertical-lr; font-size:.58rem; font-weight:500; letter-spacing:.2em; text-transform:uppercase; color:rgba(248,245,239,.4); display:flex; align-items:center; gap:.75rem; }
+.hero__label::before { content:''; display:block; width:1px; height:40px; background:rgba(248,245,239,.2); }
+.hero__headline { opacity:0; transform:translateY(20px); animation:fadeUp 1s var(--ease) .2s forwards; }
+.hero__sub      { opacity:0; transform:translateY(14px); animation:fadeUp .9s var(--ease) .45s forwards; }
+.hero__bottom   { opacity:0; transform:translateY(10px); animation:fadeUp .8s var(--ease) .65s forwards; }
+.hero__right    { opacity:0; animation:fadeIn 1.2s ease .1s forwards; }
+@keyframes fadeUp { to { opacity:1; transform:none; } }
+@keyframes fadeIn { to { opacity:1; } }
+.home-about { padding:clamp(6rem,12vw,11rem) 0; background:var(--parchment); }
+.home-about__grid { display:grid; grid-template-columns:1fr 1fr; gap:7rem; align-items:center; }
+.home-about__img-main { width:100%; aspect-ratio:4/5; object-fit:cover; filter:sepia(.15) saturate(.85); }
+.home-about__img-inset { position:absolute; width:55%; aspect-ratio:1; object-fit:cover; bottom:-2rem; right:-2rem; border:5px solid var(--parchment); box-shadow:0 12px 40px rgba(0,0,0,.1); filter:sepia(.2) saturate(.8); }
+.home-about__img { position:relative; }
+.home-about__pull { font-family:var(--f-display); font-size:clamp(1.8rem,3.2vw,2.8rem); font-weight:300; font-style:italic; line-height:1.25; color:var(--ink); padding-left:2rem; position:relative; }
+.home-about__pull::before { content:''; position:absolute; left:0; top:.4em; bottom:.4em; width:2px; background:var(--clay); }
+.home-about__body { font-size:.975rem; line-height:1.85; color:var(--ink-mid); font-weight:300; margin-top:1.75rem; }
+.home-about__actions { display:flex; gap:1rem; margin-top:2rem; flex-wrap:wrap; }
+.home-services { padding:clamp(5rem,10vw,9rem) 0; background:var(--parchment-dk); border-top:1px solid var(--border); }
+.home-services__header { display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:end; margin-bottom:3.5rem; }
+.home-services__intro { font-size:.975rem; line-height:1.85; color:var(--ink-mid); font-weight:300; }
+.services-preview { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; background:var(--border); }
+.service-preview { background:var(--parchment); padding:2rem 1.75rem; display:flex; flex-direction:column; gap:.9rem; transition:background .3s; position:relative; overflow:hidden; }
+.service-preview::after { content:''; position:absolute; bottom:0; left:0; right:100%; height:2px; background:var(--clay); transition:right .4s var(--ease); }
+.service-preview:hover { background:#FDFCF9; }
+.service-preview:hover::after { right:0; }
+.service-preview__num { font-family:var(--f-display); font-size:.85rem; font-weight:400; font-style:italic; color:var(--clay); }
+.service-preview__name { font-family:var(--f-display); font-size:1.4rem; font-weight:300; color:var(--ink); line-height:1.2; }
+.service-preview__desc { font-size:.85rem; line-height:1.7; color:var(--ink-muted); flex:1; }
+.service-preview__link { display:inline-flex; align-items:center; gap:.4rem; font-size:.62rem; font-weight:500; letter-spacing:.14em; text-transform:uppercase; color:var(--clay); margin-top:.5rem; transition:gap .3s; }
+.service-preview:hover .service-preview__link { gap:.65rem; }
+.big-quote { padding:clamp(7rem,14vw,13rem) 0; background:var(--parchment-dk); position:relative; overflow:hidden; }
+.big-quote__crane { position:absolute; right:-4%; top:50%; transform:translateY(-50%); height:90%; opacity:.04; pointer-events:none; }
+.big-quote__text { font-family:var(--f-display); font-size:clamp(2.2rem,5vw,5.5rem); font-weight:200; line-height:1.15; letter-spacing:-.02em; color:var(--ink); max-width:1000px; }
+.big-quote__text em { font-style:italic; color:var(--clay); }
+.big-quote__attr { margin-top:2.5rem; display:flex; align-items:center; gap:1rem; }
+.big-quote__attr-line { width:28px; height:1px; background:var(--clay); }
+.big-quote__attr span { font-size:.68rem; letter-spacing:.16em; text-transform:uppercase; color:var(--ink-muted); }
+@media(max-width:1100px){ .hero { grid-template-columns:1fr 1fr; } .home-about__grid { grid-template-columns:1fr; gap:4rem; } .home-about__img-inset { display:none; } .home-about__img-main { aspect-ratio:16/9; } .home-services__header { grid-template-columns:1fr; gap:1.5rem; } .services-preview { grid-template-columns:1fr 1fr; } }
+@media(max-width:800px){ .hero { grid-template-columns:1fr; grid-template-rows:1fr auto; } .hero__left { min-height:65dvh; } .hero__right { height:40dvh; } .hero__creds { display:none; } .services-preview { grid-template-columns:1fr; } }
+@media(max-width:480px){ .hero__actions { flex-direction:column; align-items:flex-start; } }
+.home-instagram {
+  padding: 5rem 0;
+  background: var(--parchment);
+  border-top: 1px solid rgba(26,25,24,0.08);
+}
+.home-instagram__header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+.home-instagram__header .eyebrow {
+  justify-content: center;
+}
+.home-instagram__cta {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+}
+</style>
+</head>
+<body data-page="home">
+<nav class="nav" id="nav">
+  <a href="index.html">
+    <img src="Logos/PaperCrane_Logo1wht.svg" alt="Paper Crane Gardens" class="nav__logo nav__logo--wht">
+    <img src="Logos/PaperCraneBLK.svg" alt="Paper Crane Gardens" class="nav__logo nav__logo--blk">
+  </a>
+  <ul class="nav__links">
+    <li><a href="index.html"   data-page="home">Home</a></li>
+    <li><a href="about.html"   data-page="about">About</a></li>
+    <li><a href="services.html"data-page="services">Services</a></li>
+    <li><a href="journal.html" data-page="journal">Field Notes</a></li>
+    <li><a href="contact.html" data-page="contact">Contact</a></li>
+  </ul>
+  <a href="contact.html" class="nav__cta">Request Consultation</a>
+  <button class="nav__burger" id="burgerBtn" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="nav__panel" id="navPanel">
+  <div class="nav__panel-head">
+    <img src="data:image/png;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCAO6A9kDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAj/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AIyAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB//9k=" alt="Paper Crane Gardens" class="nav__panel-logo">
+    <button class="nav__panel-close" id="panelClose">&#x2715;</button>
+  </div>
+  <ul>
+    <li><a href="index.html"   class="plink" data-page="home">Home</a></li>
+    <li><a href="about.html"   class="plink" data-page="about">About</a></li>
+    <li><a href="services.html"class="plink" data-page="services">Services</a></li>
+    <li><a href="journal.html" class="plink" data-page="journal">Field Notes</a></li>
+    <li><a href="contact.html" class="plink" data-page="contact">Contact</a></li>
+  </ul>
+  <a href="contact.html" class="nav__panel-cta plink">Request Consultation</a>
+</div>
+
+<section id="home">
+  <div class="hero">
+    <div class="hero__left">
+      <div class="hero__headline">
+        <span class="line">Gardens that feel</span>
+        <span class="line italic">like they've</span>
+        <span class="line">always been</span>
+        <span class="line italic">there.</span>
+      </div>
+      <div class="hero__sub"><strong>Paper Crane Gardens</strong> is a Portland-based landscape design studio creating naturalistic, coastal-inspired gardens across the Pacific Northwest. Soft textures, organic materials, and a deep reverence for the living world — gardens designed to feel discovered, not delivered.</div>
+      <div class="hero__bottom">
+        <div class="hero__actions">
+          <a href="contact.html" class="btn btn--clay">Contact Us<svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg></a>
+          <a href="services.html" class="btn btn--ghost-wht">Explore Services</a>
+        </div>
+      </div>
+    </div>
+    <div class="hero__right">
+      <img id="heroImg" src="imgs/IMG_3302.jpg" alt="Echinacea">
+    </div>
+  </div>
+</section>
+
+<div class="manifesto-band">
+  <div class="manifesto-band__inner">
+    <span class="manifesto-band__item">Landscape Design &amp; Installation</span><span class="manifesto-band__item mark"> ✦ </span>
+    <span class="manifesto-band__item">Native &amp; Coastal Plants</span><span class="manifesto-band__item mark"> ✦ </span>
+    <span class="manifesto-band__item">Naturalistic Garden Design</span><span class="manifesto-band__item mark"> ✦ </span>
+    <span class="manifesto-band__item">Ecological Landscape Maintenance</span><span class="manifesto-band__item mark"> ✦ </span>
+    <span class="manifesto-band__item">Rewilding &amp; Habitat Restoration</span><span class="manifesto-band__item mark"> ✦ </span>
+    <span class="manifesto-band__item">Organic Hardscape &amp; Natural Materials</span><span class="manifesto-band__item mark"> ✦ </span>
+    <span class="manifesto-band__item">Backyard Habitat Certified Landscapes</span><span class="manifesto-band__item mark"> ✦ </span>
+    <span class="manifesto-band__item">Garden Consultations</span><span class="manifesto-band__item mark"> ✦ </span>
+    <span class="manifesto-band__item">Pollinator &amp; Food Gardens</span><span class="manifesto-band__item mark"> ✦ </span>
+  </div>
+</div>
+
+<section class="home-about">
+  <div class="wrap">
+    <div class="home-about__grid">
+      <div class="reveal">
+        <div class="home-about__img">
+          <img src="imgs/IMG_4477.JPG" alt="Taylor tending a garden" class="home-about__img-main">
+        </div>
+      </div>
+      <div>
+        <div class="eyebrow reveal"><div class="eyebrow__line"></div><span>About Paper Crane</span></div>
+        <blockquote class="home-about__pull reveal d1">"A garden's highest achievement is looking like it never needed us."</blockquote>
+        <p class="home-about__body reveal d2">Paper Crane Gardens brings together two coastlines: the warmth and ease of coastal California, and the lush, layered plant palette of the Pacific Northwest. The result is something Portland doesn't see enough of — outdoor spaces that feel genuinely calm. Wispy grasses catching afternoon light. Natural wood and clay underfoot. Native plant communities that move with the wind and deepen with every season. Ecological by practice, beautiful by design, and grounded in certified horticultural expertise.</p>
+        <div class="home-about__actions reveal d3">
+          <a href="about.html" class="btn btn--clay">Learn More<svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="home-services">
+  <div class="wrap">
+    <div class="home-services__header">
+      <div class="reveal">
+        <div class="eyebrow"><div class="eyebrow__line"></div><span>Services</span></div>
+        <h2 class="t-h1">Naturalistic Landscape Design &amp; Ecological Gardening</h2>
+      </div>
+      <p class="home-services__intro reveal d2">Full-service naturalistic landscape design, installation, ecological maintenance, and consultation for Portland-area homeowners. Grounded in certified horticultural expertise, coastal California warmth, and a genuine love for the wild, layered beauty of the Pacific Northwest.</p>
+    </div>
+    <div class="services-preview">
+      <div class="service-preview reveal">
+        <div class="service-preview__num">01</div>
+        <h3 class="service-preview__name">Landscape Design &amp; Installation</h3>
+        <p class="service-preview__desc">Site assessment, detailed site map, phased installation plan, and curated plant list — through to full installation with soil amending, planting, and mulching. </p>
+        <a href="services.html" class="service-preview__link">Learn More <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 6h8M6 2l4 4-4 4"/></svg></a>
+      </div>
+      <div class="service-preview reveal d1">
+        <div class="service-preview__num">02</div>
+        <h3 class="service-preview__name">Ecological Maintenance</h3>
+        <p class="service-preview__desc">Monthly fine gardening — inclusive of seasonally-appropriate pruning, hand weeding, organic soil management, and native plant care.</p>
+        <a href="services.html" class="service-preview__link">Learn More <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 6h8M6 2l4 4-4 4"/></svg></a>
+      </div>
+      <div class="service-preview reveal d2">
+        <div class="service-preview__num">03</div>
+        <h3 class="service-preview__name">Garden Consultation</h3>
+        <p class="service-preview__desc">On-site or virtual — but never unprepared. Every consultation begins with thorough research into your site's conditions and a curated plant palette prepared in advance.</p>
+        <a href="services.html" class="service-preview__link">Learn More <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 6h8M6 2l4 4-4 4"/></svg></a>
+      </div>
+    </div>
+    <div style="margin-top:2rem; display:flex; justify-content:flex-end;" class="reveal d1">
+      <a href="services.html" class="btn btn--outline">View All Services <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<section class="home-instagram">
+  <div class="wrap">
+    <div class="home-instagram__feed reveal d1">
+      <behold-widget feed-id="Wkc3EDBZ2lTstFMKROPd"></behold-widget>
+<script>
+  (() => {
+    const d=document,s=d.createElement("script");s.type="module";
+    s.src="https://w.behold.so/widget.js";d.head.append(s);
+  })();
+</script>
+    <div class="home-instagram__cta reveal d2">
+      <a href="https://www.instagram.com/papercranegardensllc/" target="_blank" rel="noopener" class="btn btn--outline">Follow on Instagram</a>
+    </div>
+  </div>
+</section>
+
+<section class="big-quote">
+  <div class="wrap">
+    <h2 class="big-quote__text reveal">"Every garden holds <em>the landscape it was always meant to become.</em> Our job is simply to help it get there."</h2>
+    <div class="big-quote__attr reveal d1">
+      <div class="big-quote__attr-line"></div>
+      <span>Taylor Real · Owner, Paper Crane Gardens</span>
+    </div>
+    <div style="margin-top:2.5rem;" class="reveal d2">
+      <a href="contact.html" class="btn btn--clay">Contact Us<svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<script>
+window.addEventListener('load', () => {
+  const img = document.getElementById('heroImg');
+  if (img) img.classList.add('loaded');
+});
+</script>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <img src="Logos/PaperCrane_Logo1wht.svg" alt="Paper Crane Gardens" class="footer__logo">
+      </div>
+      <div class="footer__col">
+        <h4>Contact</h4>
+        <p class="footer__contact-line">Paper Crane Gardens, LLC  |  <a href="mailto:taylor@papercranegardens.com">taylor@papercranegardens.com</a></p>
+        <p class="footer__contact-line">Licensed, Bonded, Insured: LCB # 19231</p>
+        <p class="footer__contact-line">Areas of Service: Beaverton | Hillsboro | Tigard | SW Portland</p>
+        <div class="footer__social">
+          <a href="https://www.instagram.com/papercranegardensllc/?e=9ca78c40-f050-461f-b775-3168c1de5026&g=5" aria-label="Instagram" target="_blank" rel="noopener"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(248,245,239,0.4)" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+        </div>
+
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2026 Paper Crane Gardens, LLC. All rights reserved.</span>
+
+    </div>
+  </div>
+</footer>
+
+
+
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+const nav = document.getElementById('nav');
+const isHome = document.body.dataset.page === 'home';
+if (!isHome) nav.classList.add('solid');
+window.addEventListener('scroll', () => {
+  if (isHome) nav.classList.toggle('scrolled', window.scrollY > 50);
+}, { passive: true });
+const page = document.body.dataset.page;
+document.querySelectorAll('[data-page]').forEach(el => {
+  if (el.dataset.page === page) el.classList.add('active');
+});
+const panel = document.getElementById('navPanel');
+document.getElementById('burgerBtn').addEventListener('click', () => {
+  panel.classList.add('open'); document.body.style.overflow = 'hidden';
+});
+document.getElementById('panelClose').addEventListener('click', closePanel);
+document.querySelectorAll('.plink').forEach(l => l.addEventListener('click', closePanel));
+function closePanel() { panel.classList.remove('open'); document.body.style.overflow = ''; }
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('up'); obs.unobserve(e.target); } });
+}, { threshold: 0.12 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>

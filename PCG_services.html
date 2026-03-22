@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Landscape Design Services Portland Oregon | Paper Crane Gardens</title>
+<meta name="description" content="Naturalistic landscape design, installation, ecological maintenance, and garden consultations in Portland, Oregon. Paper Crane Gardens — soft, coastal-inspired gardens for Pacific Northwest homeowners. Licensed, certified, and genuinely different.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,200..700;1,9..144,200..700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+:root {
+  --parchment:    #F8F5EF;
+  --parchment-dk: #EDE8DE;
+  --celadon:      #DDE8DC;
+  --celadon-deep: #B8CEB6;
+  --charcoal:     #17161A;
+  --charcoal-soft:#2C2B30;
+  --clay:         #B8644A;
+  --clay-light:   #CA7D64;
+  --clay-pale:    #F0E0D8;
+  --ink:          #1A1918;
+  --ink-mid:      #4A4744;
+  --ink-muted:    #7A7672;
+  --ink-faint:    #AAA69E;
+  --border:       rgba(26,25,24,0.10);
+  --border-strong:rgba(26,25,24,0.18);
+  --f-display: 'Fraunces', Georgia, serif;
+  --f-body:    'DM Sans', system-ui, sans-serif;
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+body { font-family: var(--f-body); background: var(--parchment); color: var(--ink); overflow-x: hidden; }
+img { display: block; max-width: 100%; }
+a { text-decoration: none; color: inherit; }
+button { cursor: pointer; font-family: var(--f-body); border: none; background: none; }
+body::after {
+  content:''; position:fixed; inset:0; pointer-events:none; z-index:9000; opacity:0.025;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23g)'/%3E%3C/svg%3E");
+  background-size:200px;
+}
+.wrap      { max-width:1320px; margin:0 auto; padding:0 clamp(1.5rem,5vw,4.5rem); }
+.wrap--mid { max-width:1000px; margin:0 auto; padding:0 clamp(1.5rem,5vw,4.5rem); }
+.wrap--slim{ max-width:740px;  margin:0 auto; padding:0 clamp(1.5rem,5vw,4.5rem); }
+.t-display { font-family:var(--f-display); font-size:clamp(3.5rem,9vw,8.5rem); font-weight:300; line-height:0.93; letter-spacing:-0.02em; }
+.t-h1      { font-family:var(--f-display); font-size:clamp(2.4rem,5vw,5rem);    font-weight:300; line-height:1.0;  letter-spacing:-0.01em; }
+.t-h2      { font-family:var(--f-display); font-size:clamp(1.9rem,3.5vw,3.2rem);font-weight:300; line-height:1.1;  letter-spacing:-0.005em;}
+.t-h3      { font-family:var(--f-display); font-size:clamp(1.3rem,2.5vw,2rem);  font-weight:400; line-height:1.2; }
+.t-body    { font-size:1rem;    line-height:1.8;  color:var(--ink-mid); font-weight:300; }
+.t-body-sm { font-size:.875rem; line-height:1.75; color:var(--ink-muted);font-weight:300;}
+.eyebrow { display:inline-flex; align-items:center; gap:.65rem; margin-bottom:1.5rem; }
+.eyebrow__line { width:22px; height:1px; background:var(--clay); flex-shrink:0; }
+.eyebrow span { font-size:.64rem; font-weight:500; letter-spacing:.2em; text-transform:uppercase; color:var(--clay); }
+.btn { display:inline-flex; align-items:center; gap:.65rem; font-family:var(--f-body); font-size:.68rem; font-weight:500; letter-spacing:.14em; text-transform:uppercase; padding:.9rem 2rem; border-radius:1px; transition:all .3s var(--ease); cursor:pointer; border:none; }
+.btn--clay    { background:var(--clay); color:white; }
+.btn--clay:hover { background:var(--clay-light); box-shadow:0 6px 20px rgba(184,100,74,.3); }
+.btn--outline { background:transparent; color:var(--ink); border:1px solid var(--border-strong); }
+.btn--outline:hover { border-color:var(--clay); color:var(--clay); }
+.btn--ghost-wht { background:transparent; color:white; border:1px solid rgba(255,255,255,.4); }
+.btn--ghost-wht:hover { background:rgba(255,255,255,.1); border-color:rgba(255,255,255,.7); }
+.btn svg { flex-shrink:0; transition:transform .3s var(--ease); }
+.btn:hover svg { transform:translateX(3px); }
+.nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:1.75rem clamp(1.5rem,5vw,4.5rem); display:flex; align-items:center; justify-content:space-between; transition:padding .5s var(--ease), background .5s var(--ease), border-color .5s; border-bottom:1px solid transparent; }
+.nav.scrolled { padding-top:1.1rem; padding-bottom:1.1rem; background:rgba(248,245,239,.96); backdrop-filter:blur(16px) saturate(1.2); border-color:var(--border); }
+.nav.solid     { padding-top:1.1rem; padding-bottom:1.1rem; background:rgba(248,245,239,.98); border-color:var(--border); }
+.nav__logo { height:36px; transition:opacity .3s; }
+.nav__logo:hover { opacity:.65; }
+.nav__logo--wht { display:block; }
+.nav__logo--blk { display:none; }
+.nav.scrolled .nav__logo--wht, .nav.solid .nav__logo--wht { display:none; }
+.nav.scrolled .nav__logo--blk, .nav.solid .nav__logo--blk { display:block; }
+.nav__links { display:flex; align-items:center; gap:2.5rem; list-style:none; }
+.nav__links a { font-size:.68rem; font-weight:400; letter-spacing:.14em; text-transform:uppercase; color:rgba(255,255,255,.75); transition:color .3s; position:relative; }
+.nav__links a::after { content:''; position:absolute; bottom:-2px; left:0; right:100%; height:1px; background:var(--clay-light); transition:right .35s var(--ease); }
+.nav__links a:hover { color:white; }
+.nav__links a:hover::after { right:0; }
+.nav__links a.active { color:white; }
+.nav__links a.active::after { right:0; }
+.nav.scrolled .nav__links a, .nav.solid .nav__links a { color:var(--ink-mid); }
+.nav.scrolled .nav__links a.active, .nav.solid .nav__links a.active { color:var(--clay); }
+.nav.scrolled .nav__links a.active::after, .nav.solid .nav__links a.active::after { background:var(--clay); }
+.nav__cta { font-size:.64rem; font-weight:500; letter-spacing:.14em; text-transform:uppercase; padding:.65rem 1.35rem; border:1px solid rgba(255,255,255,.45); color:white; border-radius:1px; transition:all .3s var(--ease); }
+.nav__cta:hover { background:rgba(255,255,255,.12); border-color:rgba(255,255,255,.8); }
+.nav.scrolled .nav__cta, .nav.solid .nav__cta { border-color:var(--clay); color:var(--clay); }
+.nav.scrolled .nav__cta:hover, .nav.solid .nav__cta:hover { background:var(--clay); color:white; }
+.nav__burger { display:none; flex-direction:column; gap:5px; padding:2px; }
+.nav__burger span { display:block; width:22px; height:1.5px; background:white; transition:all .3s; }
+.nav.scrolled .nav__burger span, .nav.solid .nav__burger span { background:var(--ink); }
+.nav__panel { position:fixed; inset:0; background:var(--parchment); z-index:200; display:flex; flex-direction:column; padding:2.5rem clamp(1.5rem,5vw,4.5rem); transform:translateY(-100%); transition:transform .5s var(--ease); }
+.nav__panel.open { transform:translateY(0); }
+.nav__panel-head { display:flex; justify-content:space-between; align-items:center; margin-bottom:3rem; }
+.nav__panel-logo { height:32px; }
+.nav__panel-close { font-size:1.2rem; color:var(--ink-mid); padding:.25rem; line-height:1; }
+.nav__panel ul { list-style:none; display:flex; flex-direction:column; gap:0; }
+.nav__panel ul li { border-bottom:1px solid var(--border); }
+.nav__panel ul a { display:block; padding:1.1rem 0; font-family:var(--f-display); font-size:1.6rem; font-weight:300; color:var(--ink); transition:color .2s; }
+.nav__panel ul a:hover, .nav__panel ul a.active { color:var(--clay); }
+.nav__panel-cta { margin-top:2.5rem; display:inline-block; padding:1rem 2rem; background:var(--clay); color:white; font-size:.68rem; font-weight:500; letter-spacing:.14em; text-transform:uppercase; border-radius:1px; transition:background .3s; }
+.nav__panel-cta:hover { background:var(--clay-light); }
+.footer { background:var(--charcoal); padding:5rem 0 2.5rem; }
+.footer__top { display:grid; grid-template-columns:1.6fr 1.2fr; gap:4rem; padding-bottom:4rem; border-bottom:1px solid rgba(255,255,255,.05); margin-bottom:2.5rem; }
+.footer__brand { display:flex; flex-direction:column; gap:1.25rem; }
+.footer__logo { width:50%; height:auto; max-width:100%; opacity:.95; display:block; }
+.footer__tagline { font-family:var(--f-display); font-size:.975rem; font-style:italic; font-weight:300; color:rgba(248,245,239,.3); line-height:1.5; }
+.footer__about { font-size:.82rem; line-height:1.7; color:rgba(248,245,239,.25); }
+.footer__social { display:flex; gap:.6rem; margin-top:.5rem; }
+.footer__social a { width:34px; height:34px; border-radius:50%; border:1px solid rgba(255,255,255,.08); display:flex; align-items:center; justify-content:center; transition:all .3s; }
+.footer__social a:hover { border-color:var(--clay); background:rgba(184,100,74,.1); }
+.footer__col h4 { font-size:.62rem; font-weight:500; letter-spacing:.18em; text-transform:uppercase; color:rgba(248,245,239,.4); margin-bottom:1.25rem; }
+.footer__links { list-style:none; display:flex; flex-direction:column; gap:.6rem; }
+.footer__links a { font-size:.82rem; color:rgba(248,245,239,.3); transition:color .3s; }
+.footer__links a:hover { color:var(--parchment); }
+.footer__contact-line { font-size:.82rem; color:rgba(248,245,239,.3); line-height:1.65; margin-bottom:.35rem; }
+.footer__bottom { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; font-size:.68rem; letter-spacing:.06em; color:rgba(248,245,239,.18); }
+.footer__bottom-right { display:flex; gap:1rem; flex-wrap:wrap; }
+.footer__badge { font-size:.58rem; letter-spacing:.12em; text-transform:uppercase; color:rgba(248,245,239,.18); padding:.3rem .7rem; border:1px solid rgba(255,255,255,.06); border-radius:20px; }
+.reveal { opacity:0; transform:translateY(24px); transition:opacity .75s var(--ease), transform .75s var(--ease); }
+.reveal.up { opacity:1; transform:none; }
+.d1 { transition-delay:.08s; } .d2 { transition-delay:.16s; } .d3 { transition-delay:.24s; } .d4 { transition-delay:.32s; }
+.page-header { background:var(--charcoal); padding:clamp(7rem,14vw,11rem) 0 clamp(3.5rem,6vw,5rem); position:relative; overflow:hidden; }
+.page-header::before { content:''; position:absolute; bottom:-30%; left:-10%; width:60%; height:100%; background:radial-gradient(ellipse, rgba(184,100,74,.07) 0%, transparent 70%); pointer-events:none; }
+.page-header__eyebrow { margin-bottom:1.25rem; }
+.page-header__eyebrow .eyebrow__line { background:var(--clay); }
+.page-header__eyebrow span { color:var(--clay); }
+.page-header__title { font-family:var(--f-display); font-size:clamp(3rem,7vw,6.5rem); font-weight:200; line-height:.95; letter-spacing:-.025em; color:var(--parchment); }
+.page-header__title em { font-style:italic; color:var(--clay-light); }
+.page-header__sub { font-size:clamp(.9rem,1.8vw,1.05rem); line-height:1.8; color:rgba(248,245,239,.45); max-width:520px; margin-top:1.5rem; font-weight:300; }
+.manifesto-band { background:var(--parchment-dk); padding:2.75rem 0; overflow:hidden; border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
+.manifesto-band__inner { display:flex; gap:4rem; animation:ticker 28s linear infinite; white-space:nowrap; }
+.manifesto-band__item { font-family:var(--f-display); font-size:clamp(1rem,2vw,1.2rem); font-weight:300; color:var(--ink-muted); flex-shrink:0; }
+.manifesto-band__item.mark { font-style:italic; color:var(--clay); }
+@keyframes ticker { from { transform:translateX(0); } to { transform:translateX(-50%); } }
+.gallery { display:grid; grid-template-columns:2.2fr 1fr 1fr; grid-template-rows:380px 280px; gap:3px; background:var(--charcoal); }
+.gallery__cell { overflow:hidden; position:relative; }
+.gallery__cell img { width:100%; height:100%; object-fit:cover; filter:sepia(.2) saturate(.75) brightness(.95); transition:transform .9s var(--ease), filter .5s; }
+.gallery__cell:hover img { transform:scale(1.06); filter:sepia(.1) saturate(.9) brightness(1.02); }
+.gallery__cell--tall { grid-row:span 2; }
+.gallery__caption { position:absolute; bottom:0; left:0; right:0; padding:1rem 1.25rem; background:linear-gradient(to top, rgba(23,22,26,.6), transparent); opacity:0; transition:opacity .4s; }
+.gallery__cell:hover .gallery__caption { opacity:1; }
+.gallery__caption span { font-size:.6rem; letter-spacing:.16em; text-transform:uppercase; color:rgba(248,245,239,.7); }
+@media(max-width:1100px){ .footer__top { grid-template-columns:1fr 1fr; gap:2.5rem; } }
+@media(max-width:800px){ .nav__links,.nav__cta { display:none; } .nav__burger { display:flex; } .gallery { grid-template-columns:1fr 1fr; grid-template-rows:200px 200px 180px; } .gallery__cell--tall { grid-row:auto; } .footer__top { grid-template-columns:1fr; } }
+@media(max-width:480px){ .gallery { grid-template-columns:1fr; grid-template-rows:repeat(5,200px); } }
+</style>
+
+<style>
+.services-main { padding:clamp(5rem,10vw,9rem) 0; background:var(--parchment); }
+.services-list { display:flex; flex-direction:column; border-top:1px solid var(--border); margin-top:3.5rem; }
+.service-row { display:grid; grid-template-columns:3rem 1fr auto; gap:0 2.5rem; align-items:baseline; padding:2.25rem 0; border-bottom:1px solid var(--border); position:relative; transition:background .3s; }
+.service-row::before { content:''; position:absolute; inset:0 -4.5rem; background:var(--clay-pale); opacity:0; transition:opacity .3s; pointer-events:none; }
+.service-row:hover::before { opacity:1; }
+.service-row__num { font-family:var(--f-display); font-size:.85rem; font-style:italic; color:var(--clay); position:relative; z-index:1; padding-top:.1em; }
+.service-row__body { position:relative; z-index:1; }
+.service-row__name { font-family:var(--f-display); font-size:clamp(1.4rem,2.5vw,2.2rem); font-weight:300; color:var(--ink); line-height:1.1; margin-bottom:.65rem; transition:color .3s; }
+.service-row:hover .service-row__name { color:var(--clay); }
+.service-row__desc { font-size:.9rem; line-height:1.75; color:var(--ink-muted); max-width:580px; }
+.service-row__includes { list-style:none; margin-top:.75rem; display:flex; flex-direction:column; gap:.3rem; }
+.service-row__includes li { font-size:.82rem; line-height:1.6; color:var(--ink-muted); padding-left:1rem; position:relative; }
+.service-row__includes li::before { content:'–'; position:absolute; left:0; color:var(--clay); }
+.service-row__aside { position:relative; z-index:1; display:flex; flex-direction:column; align-items:flex-end; gap:.4rem; padding-top:.1em; flex-shrink:0; }
+.service-row__price { font-family:var(--f-display); font-size:1.1rem; font-weight:300; color:var(--ink); white-space:nowrap; text-align:right; }
+.service-row__price-note { font-size:.68rem; color:var(--ink-faint); text-align:right; max-width:160px; line-height:1.4; }
+.service-row__cta { font-size:.6rem; font-weight:500; letter-spacing:.14em; text-transform:uppercase; color:var(--clay); display:flex; align-items:center; gap:.4rem; white-space:nowrap; transition:gap .3s; margin-top:.25rem; }
+.service-row:hover .service-row__cta { gap:.65rem; }
+.services-note { margin-top:2.5rem; padding:1.5rem; border:1px solid var(--border); background:var(--celadon); }
+.services-note p { font-size:.875rem; line-height:1.75; color:var(--ink-mid); }
+.services-note strong { color:var(--clay); font-weight:400; }
+
+.approach { padding:clamp(5rem,10vw,9rem) 0; background:var(--charcoal); position:relative; overflow:hidden; }
+.approach::before { content:''; position:absolute; bottom:-30%; left:-10%; width:60%; height:100%; background:radial-gradient(ellipse, rgba(184,100,74,.07) 0%, transparent 70%); pointer-events:none; }
+.approach__inner { display:grid; grid-template-columns:1fr 1fr; gap:8rem; align-items:center; }
+.approach__statement { font-family:var(--f-display); font-size:clamp(2.2rem,4.5vw,4.5rem); font-weight:300; line-height:1.05; letter-spacing:-.02em; }
+.approach__statement .ln-wht { color:var(--parchment); display:block; }
+.approach__statement .ln-clay { color:var(--clay-light); display:block; font-style:italic; }
+.approach__steps { display:flex; flex-direction:column; gap:2rem; }
+.step { display:flex; gap:1.25rem; align-items:flex-start; padding-bottom:2rem; border-bottom:1px solid rgba(255,255,255,.05); }
+.step:last-child { border-bottom:none; padding-bottom:0; }
+.step__num { font-family:var(--f-display); font-size:2.5rem; font-weight:200; color:rgba(248,245,239,.08); line-height:1; flex-shrink:0; min-width:2.5rem; }
+.step__title { font-size:.68rem; font-weight:500; letter-spacing:.14em; text-transform:uppercase; color:var(--clay); margin-bottom:.4rem; }
+.step__body { font-size:.9rem; line-height:1.75; color:rgba(248,245,239,.45); }
+
+.services-cta { padding:clamp(4rem,8vw,7rem) 0; background:var(--parchment-dk); border-top:1px solid var(--border); }
+.services-cta__inner { display:grid; grid-template-columns:1fr auto; gap:4rem; align-items:center; }
+.services-cta__title { font-family:var(--f-display); font-size:clamp(1.8rem,3.5vw,3rem); font-weight:300; color:var(--ink); }
+.services-cta__title em { font-style:italic; color:var(--clay); }
+.services-cta__sub { font-size:.975rem; color:var(--ink-muted); margin-top:.75rem; line-height:1.75; max-width:540px; font-weight:300; }
+
+@media(max-width:1100px){ .approach__inner { grid-template-columns:1fr; gap:4rem; } }
+@media(max-width:800px){ .service-row { grid-template-columns:2.5rem 1fr; } .service-row__aside { display:none; } .services-cta__inner { grid-template-columns:1fr; } }
+</style>
+</head>
+<body data-page="services">
+<nav class="nav" id="nav">
+  <a href="index.html">
+    <img src="Logos/PaperCrane_Logo1wht.svg" alt="Paper Crane Gardens" class="nav__logo nav__logo--wht">
+    <img src="Logos/PaperCraneBLK.svg" alt="Paper Crane Gardens" class="nav__logo nav__logo--blk">
+  </a>
+  <ul class="nav__links">
+    <li><a href="index.html"   data-page="home">Home</a></li>
+    <li><a href="about.html"   data-page="about">About</a></li>
+    <li><a href="services.html"data-page="services">Services</a></li>
+    <li><a href="journal.html" data-page="journal">Field Notes</a></li>
+    <li><a href="contact.html" data-page="contact">Contact</a></li>
+  </ul>
+  <a href="contact.html" class="nav__cta">Request Consultation</a>
+  <button class="nav__burger" id="burgerBtn" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="nav__panel" id="navPanel">
+  <div class="nav__panel-head">
+    <img src="data:image/png;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCAO6A9kDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAj/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AIyAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB//9k=" alt="Paper Crane Gardens" class="nav__panel-logo">
+    <button class="nav__panel-close" id="panelClose">&#x2715;</button>
+  </div>
+  <ul>
+    <li><a href="index.html"   class="plink" data-page="home">Home</a></li>
+    <li><a href="about.html"   class="plink" data-page="about">About</a></li>
+    <li><a href="services.html"class="plink" data-page="services">Services</a></li>
+    <li><a href="journal.html" class="plink" data-page="journal">Field Notes</a></li>
+    <li><a href="contact.html" class="plink" data-page="contact">Contact</a></li>
+  </ul>
+  <a href="contact.html" class="nav__panel-cta plink">Request Consultation</a>
+</div>
+
+<div class="page-header">
+  <div class="wrap">
+    <div class="eyebrow page-header__eyebrow reveal"><div class="eyebrow__line"></div><span>What We Offer</span></div>
+    <h1 class="page-header__title reveal d1">Our <em>Services</em></h1>
+    <p class="page-header__sub reveal d2">Naturalistic landscape design, installation, and ecological maintenance for Portland homeowners who want an outdoor space that feels soft, layered, and genuinely alive.</p>
+  </div>
+</div>
+
+<section class="services-main">
+  <div class="wrap">
+    <div class="eyebrow reveal"><div class="eyebrow__line"></div><span>Services &amp; Pricing</span></div>
+    <div class="services-list">
+
+      <div class="service-row reveal">
+        <div class="service-row__num">01</div>
+        <div class="service-row__body">
+          <h3 class="service-row__name">Landscape Design</h3>
+          <p class="service-row__desc">For homeowners ready to transform their outdoor space from the ground up. Our signature service covers everything: site analysis, concept development, planting design, hardscape planning, and material selection. We design with naturalistic plant communities, permeable hardscape materials — wood, clay, natural stone — and a bias toward softness over structure. Projects are built to feel discovered, not delivered.</p>
+        </div>
+        <div class="service-row__aside">
+          <span class="service-row__price">From $1,200</span>
+          <span class="service-row__price-note">Pricing depends on size and scope</span>
+          <a href="contact.html" class="service-row__cta">Inquire <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 6h8M6 2l4 4-4 4"/></svg></a>
+        </div>
+      </div>
+
+      <div class="service-row reveal d1">
+        <div class="service-row__num">02</div>
+        <div class="service-row__body">
+          <h3 class="service-row__name">Landscape Installation</h3>
+          <p class="service-row__desc">Full-service installation — demolition and yard waste removal, plant and material procurement, planting, soil amending, and mulching. We source naturally derived materials: reclaimed wood, clay, decomposed granite, and uncut stone selected to age beautifully and settle into the landscape rather than dominate it. Includes post-install care instructions and access to discounted ongoing maintenance rates.</p>
+        </div>
+        <div class="service-row__aside">
+          <span class="service-row__price">From $1,500</span>
+          <span class="service-row__price-note">Pricing depends on size and scope</span>
+          <a href="contact.html" class="service-row__cta">Inquire <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 6h8M6 2l4 4-4 4"/></svg></a>
+        </div>
+      </div>
+
+      <div class="service-row reveal d2">
+        <div class="service-row__num">03</div>
+        <div class="service-row__body">
+          <h3 class="service-row__name">Ecological Landscape Maintenance</h3>
+          <p class="service-row__desc">Monthly fine gardening for Portland homeowners who want a beautifully maintained naturalistic landscape without the hassle. Every visit is seasonally informed and ecologically grounded — hands-on horticultural care that supports the soft, layered character of your garden. Not a mow-and-blow service. Not even close.</p>
+          <ul class="service-row__includes">
+            <li>Seasonally appropriate pruning, deadheading, and soil conditioning</li>
+            <li>Organic soil management &amp; composting strategies</li>
+            <li>Mulching, hand weeding &amp; ecological weed suppression</li>
+            <li>Integrated pest &amp; disease management (organic solutions only)</li>
+            <li>Seasonal planting &amp; rotation of annuals/perennials</li>
+            <li>Irrigation programming &amp; efficiency optimization</li>
+            <li>Native plant &amp; pollinator habitat care</li>
+          </ul>
+        </div>
+        <div class="service-row__aside">
+          <span class="service-row__price">Custom Pricing</span>
+          <span class="service-row__price-note">Annual contract required.</span>
+          <a href="contact.html" class="service-row__cta">Inquire <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 6h8M6 2l4 4-4 4"/></svg></a>
+        </div>
+      </div>
+
+      <div class="service-row reveal d3">
+        <div class="service-row__num">04</div>
+        <div class="service-row__body">
+          <h3 class="service-row__name">Garden Consultation</h3>
+          <p class="service-row__desc">For homeowners in the early stages, or those who want a professional eye and a clear direction. A focused, single-session consultation for Pacific Northwest homeowners to assess your space, discuss your vision, and leave with a clear sense of direction. Ideal if you're not ready for a full project but want to stop second-guessing yourself. On-site or virtual — and never unprepared. Before we arrive, we research your site thoroughly and prepare a curated plant palette and design direction specific to your conditions and vision. Your first conversation starts at a level of depth most clients don't reach until the third meeting. Ideal for DIYers, budget-conscious homeowners, and anyone considering a larger project. Perfect for those who want the Paper Crane aesthetic — naturalistic, soft, coastal-inspired — but aren't sure where to start. Consultation fee credited toward full design services.</p>
+        </div>
+        <div class="service-row__aside">
+          <span class="service-row__price">$150 / hour</span>
+          <a href="contact.html" class="service-row__cta">Inquire <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 6h8M6 2l4 4-4 4"/></svg></a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="services-note reveal d1">
+      <p><strong>Please note:</strong> We do not mow lawns, apply pesticides, herbicides, or chemical controls of any kind. Our Integrated Pest Management practices rely exclusively on organic and mechanical solutions. We serve residential clients throughout the <strong>Portland Metropolitan Area</strong>.</p>
+    </div>
+  </div>
+</section>
+
+<section class="approach" id="approach">
+  <div class="wrap">
+    <div class="approach__inner">
+      <div>
+        <div class="eyebrow reveal" style="margin-bottom:1.5rem;"><div class="eyebrow__line" style="background:var(--clay);"></div><span style="color:var(--clay);">Our Approach</span></div>
+        <h2 class="approach__statement reveal d1">
+          <span class="ln-wht">We arrive</span>
+          <span class="ln-clay">prepared.</span>
+          <span class="ln-wht">You notice</span>
+          <span class="ln-clay">immediately.</span>
+        </h2>
+        <p style="margin-top:2rem;font-size:.95rem;line-height:1.8;color:rgba(248,245,239,.45);max-width:440px;" class="reveal d2">Every Paper Crane Gardens consultation begins before we ever set foot on your property. No other ecological landscaper in the Portland Metropolitan Area does this.</p>
+        <div style="margin-top:2rem;" class="reveal d3">
+          <a href="contact.html" class="btn btn--clay">Start With a Consultation <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg></a>
+        </div>
+      </div>
+      <div class="approach__steps">
+        <div class="step reveal d1"><div class="step__num">1</div><div><div class="step__title">Submit an Intake Form</div><p class="step__body">A detailed questionnaire covering site conditions, aesthetic goals, priorities, irrigation, and budget. Takes about ten minutes — and shapes everything that follows.</p></div></div>
+        <div class="step reveal d2"><div class="step__num">2</div><div><div class="step__title">We Research Your Garden</div><p class="step__body">Your answers inform deep research into your site's conditions, sun exposure, soil, and regional plant performance. We prepare a tailored plant palette and design direction before we arrive — so nothing is guesswork.</p></div></div>
+        <div class="step reveal d3"><div class="step__num">3</div><div><div class="step__title">We Meet — Already Informed</div><p class="step__body">We arrive with specific plant suggestions in hand. The conversation starts at a deeper level — faster, and more useful from the very first minute.</p></div></div>
+        <div class="step reveal d4"><div class="step__num">4</div><div><div class="step__title">Your Garden Is Designed and Built</div><p class="step__body">From design through installation and ongoing ecological maintenance — every phase grounded in horticultural expertise and a genuine love for the living world.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services-cta">
+  <div class="wrap">
+    <div class="services-cta__inner">
+      <div>
+        <h2 class="services-cta__title reveal">Not sure <em>where to start?</em></h2>
+        <p class="services-cta__sub reveal d1">A consultation is always the right first step. We'll walk your space, understand your vision, and help you see the naturalistic, layered garden it's capable of becoming — already prepared before we knock on your door.</p>
+      </div>
+      <div class="reveal d2">
+        <a href="contact.html" class="btn btn--clay">Book a Consultation <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <img src="Logos/PaperCrane_Logo1wht.svg" alt="Paper Crane Gardens" class="footer__logo">
+      </div>
+      <div class="footer__col">
+        <h4>Contact</h4>
+        <p class="footer__contact-line">Paper Crane Gardens, LLC  |  <a href="mailto:taylor@papercranegardens.com">taylor@papercranegardens.com</a></p>
+        <p class="footer__contact-line">Licensed, Bonded, Insured: LCB # 19231</p>
+        <p class="footer__contact-line">Areas of Service: Beaverton | Hillsboro | Tigard | SW Portland</p>
+        <div class="footer__social">
+          <a href="https://www.instagram.com/papercranegardensllc/?e=9ca78c40-f050-461f-b775-3168c1de5026&g=5" aria-label="Instagram" target="_blank" rel="noopener"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(248,245,239,0.4)" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+        </div>
+
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2026 Paper Crane Gardens, LLC. All rights reserved.</span>
+
+    </div>
+  </div>
+</footer>
+
+
+
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+const nav = document.getElementById('nav');
+const isHome = document.body.dataset.page === 'home';
+if (!isHome) nav.classList.add('solid');
+window.addEventListener('scroll', () => {
+  if (isHome) nav.classList.toggle('scrolled', window.scrollY > 50);
+}, { passive: true });
+const page = document.body.dataset.page;
+document.querySelectorAll('[data-page]').forEach(el => {
+  if (el.dataset.page === page) el.classList.add('active');
+});
+const panel = document.getElementById('navPanel');
+document.getElementById('burgerBtn').addEventListener('click', () => {
+  panel.classList.add('open'); document.body.style.overflow = 'hidden';
+});
+document.getElementById('panelClose').addEventListener('click', closePanel);
+document.querySelectorAll('.plink').forEach(l => l.addEventListener('click', closePanel));
+function closePanel() { panel.classList.remove('open'); document.body.style.overflow = ''; }
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('up'); obs.unobserve(e.target); } });
+}, { threshold: 0.12 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
