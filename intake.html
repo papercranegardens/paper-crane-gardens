@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paper Crane Gardens — Garden Consultation Intake</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1f14;
+    --sage: #3b5e3b;
+    --sage-light: #5a7f5a;
+    --sage-muted: #e8f0e8;
+    --sage-pale: #f3f7f3;
+    --cream: #faf8f4;
+    --warm-gray: #8a8680;
+    --border: #d4d9cc;
+    --accent: #b5854a;
+    --accent-pale: #f5ede0;
+    --white: #ffffff;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Jost', sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    font-size: 15px;
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+
+  /* ── HEADER ── */
+  .site-header {
+    background: var(--sage);
+    padding: 48px 40px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .site-header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 40px,
+      rgba(255,255,255,0.02) 40px,
+      rgba(255,255,255,0.02) 41px
+    );
+  }
+  .crane-icon {
+    display: block;
+    width: 52px;
+    height: 52px;
+    margin: 0 auto 16px;
+    opacity: 0.9;
+  }
+  .site-header h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: 2.4rem;
+    color: #fff;
+    letter-spacing: 0.06em;
+    line-height: 1.2;
+  }
+  .site-header .tagline {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.05rem;
+    color: rgba(255,255,255,0.7);
+    margin-top: 6px;
+    letter-spacing: 0.04em;
+  }
+
+  /* ── VIEWS ── */
+  .view { display: none; }
+  .view.active { display: block; }
+
+  /* ── FORM WRAPPER ── */
+  .form-wrapper {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 48px 24px 80px;
+  }
+
+  .intro-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--sage);
+    padding: 28px 32px;
+    margin-bottom: 40px;
+    border-radius: 2px;
+  }
+  .intro-card p {
+    color: #444;
+    font-size: 0.95rem;
+    line-height: 1.8;
+  }
+  .intro-card p + p { margin-top: 12px; }
+  .intro-card strong { color: var(--sage); font-weight: 500; }
+
+  /* ── SECTION HEADERS ── */
+  .form-section {
+    margin-bottom: 40px;
+  }
+  .section-label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+  }
+  .section-num {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--sage);
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    letter-spacing: 0.02em;
+  }
+  .section-label h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-size: 1.3rem;
+    color: var(--sage);
+    letter-spacing: 0.03em;
+  }
+
+  /* ── FORM FIELDS ── */
+  .field {
+    margin-bottom: 24px;
+  }
+  .field label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 6px;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+  }
+  .field .hint {
+    font-size: 0.83rem;
+    color: var(--warm-gray);
+    margin-bottom: 8px;
+    font-style: italic;
+    font-family: 'Cormorant Garamond', serif;
+    line-height: 1.5;
+    text-transform: none;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="number"],
+  select,
+  textarea {
+    width: 100%;
+    padding: 11px 14px;
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    background: var(--white);
+    font-family: 'Jost', sans-serif;
+    font-size: 0.93rem;
+    color: var(--ink);
+    transition: border-color 0.2s, box-shadow 0.2s;
+    outline: none;
+    appearance: none;
+  }
+  input:focus, select:focus, textarea:focus {
+    border-color: var(--sage-light);
+    box-shadow: 0 0 0 3px rgba(90,127,90,0.12);
+  }
+  textarea { resize: vertical; min-height: 100px; }
+
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  @media (max-width: 600px) { .two-col { grid-template-columns: 1fr; } }
+
+  /* ── CHECKBOX / RADIO GROUPS ── */
+  .check-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 8px;
+  }
+  .check-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 9px 13px;
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    cursor: pointer;
+    transition: background 0.15s, border-color 0.15s;
+    background: var(--white);
+  }
+  .check-item:hover { background: var(--sage-pale); border-color: var(--sage-light); }
+  .check-item input { width: 16px; height: 16px; accent-color: var(--sage); flex-shrink: 0; }
+  .check-item span { font-size: 0.88rem; color: var(--ink); }
+
+  /* ── SUBMIT ── */
+  .submit-btn {
+    display: block;
+    width: 100%;
+    padding: 16px;
+    background: var(--sage);
+    color: #fff;
+    border: none;
+    border-radius: 2px;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+    margin-top: 16px;
+  }
+  .submit-btn:hover { background: var(--sage-light); }
+  .submit-btn:active { transform: scale(0.99); }
+
+  /* ── AI RESEARCH VIEW ── */
+  .research-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 24px 80px;
+  }
+  .research-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 32px;
+    padding-bottom: 24px;
+    border-bottom: 2px solid var(--sage-muted);
+  }
+  .research-header h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-size: 1.8rem;
+    color: var(--sage);
+  }
+  .research-header .client-name {
+    font-size: 1rem;
+    color: var(--warm-gray);
+    margin-top: 4px;
+  }
+  .back-btn {
+    padding: 9px 18px;
+    border: 1px solid var(--border);
+    background: var(--white);
+    border-radius: 2px;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    cursor: pointer;
+    color: var(--ink);
+    transition: background 0.2s;
+  }
+  .back-btn:hover { background: var(--sage-pale); }
+
+  .research-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 24px;
+  }
+  @media (max-width: 680px) { .research-grid { grid-template-columns: 1fr; } }
+
+  .research-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  .research-card.full { grid-column: 1 / -1; }
+  .card-head {
+    background: var(--sage-pale);
+    border-bottom: 1px solid var(--border);
+    padding: 12px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .card-head h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    font-size: 1rem;
+    color: var(--sage);
+    letter-spacing: 0.03em;
+  }
+  .card-head .badge {
+    font-size: 0.72rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 3px 8px;
+    border-radius: 20px;
+    background: var(--sage-muted);
+    color: var(--sage);
+  }
+  .card-body { padding: 18px; min-height: 80px; }
+  .card-body p { font-size: 0.88rem; color: #444; line-height: 1.7; }
+  .card-body ul { list-style: none; }
+  .card-body ul li {
+    font-size: 0.88rem;
+    color: #444;
+    padding: 5px 0;
+    border-bottom: 1px solid var(--sage-muted);
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .card-body ul li:last-child { border-bottom: none; }
+  .card-body ul li::before {
+    content: '◆';
+    color: var(--accent);
+    font-size: 0.55rem;
+    margin-top: 5px;
+    flex-shrink: 0;
+  }
+  .plant-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+  }
+  .plant-chip {
+    background: var(--sage-pale);
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    padding: 10px 14px;
+  }
+  .plant-chip .common { font-size: 0.88rem; font-weight: 500; color: var(--ink); }
+  .plant-chip .latin { font-size: 0.78rem; font-style: italic; color: var(--warm-gray); margin-top: 1px; }
+  .plant-chip .tags { margin-top: 6px; display: flex; flex-wrap: wrap; gap: 4px; }
+  .ptag {
+    font-size: 0.68rem;
+    padding: 2px 7px;
+    border-radius: 20px;
+    background: var(--sage-muted);
+    color: var(--sage);
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .ptag.edible { background: #fef3e0; color: #8a5a10; }
+  .ptag.pollinator { background: #fdf5d0; color: #7a6010; }
+  .ptag.shade { background: #e8eefc; color: #3050a0; }
+
+  .loading-state {
+    text-align: center;
+    padding: 40px 20px;
+  }
+  .spinner {
+    width: 36px;
+    height: 36px;
+    border: 3px solid var(--sage-muted);
+    border-top-color: var(--sage);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    margin: 0 auto 16px;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .loading-state p { color: var(--warm-gray); font-size: 0.88rem; font-style: italic; font-family: 'Cormorant Garamond', serif; }
+
+  .error-msg {
+    background: #fff5f5;
+    border: 1px solid #f5c0c0;
+    border-radius: 2px;
+    padding: 14px 18px;
+    font-size: 0.88rem;
+    color: #a03030;
+    margin-bottom: 16px;
+  }
+
+  .summary-box {
+    background: var(--accent-pale);
+    border: 1px solid #e0c090;
+    border-left: 4px solid var(--accent);
+    padding: 20px 24px;
+    margin-bottom: 24px;
+    border-radius: 2px;
+  }
+  .summary-box h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    color: var(--accent);
+    margin-bottom: 8px;
+  }
+  .summary-box p { font-size: 0.9rem; color: #5a4020; line-height: 1.7; }
+
+  .print-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 18px;
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    border-radius: 2px;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: opacity 0.2s;
+  }
+  .print-btn:hover { opacity: 0.85; }
+
+  .question-summary {
+    font-size: 0.82rem;
+    color: var(--warm-gray);
+    margin-top: 2px;
+  }
+
+  .api-key-notice {
+    background: var(--sage-pale);
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    padding: 14px 18px;
+    font-size: 0.85rem;
+    color: #444;
+    margin-bottom: 20px;
+  }
+  .api-key-notice input {
+    width: 100%;
+    margin-top: 8px;
+  }
+
+  @media print {
+    .site-header, .back-btn, .print-btn, .api-key-notice { display: none !important; }
+    .research-wrapper { padding: 0; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <svg class="crane-icon" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M26 8 L34 22 L26 20 L18 22 Z" fill="rgba(255,255,255,0.85)"/>
+    <path d="M26 20 L38 30 L26 44 L14 30 Z" fill="rgba(255,255,255,0.6)"/>
+    <path d="M26 44 L22 50 M26 44 L30 50" stroke="rgba(255,255,255,0.7)" stroke-width="1.5" stroke-linecap="round"/>
+    <path d="M14 30 L6 26 M38 30 L46 26" stroke="rgba(255,255,255,0.6)" stroke-width="1.5" stroke-linecap="round"/>
+  </svg>
+  <h1>Paper Crane Gardens</h1>
+  <div class="tagline">Garden Consultation Intake</div>
+</header>
+
+<!-- ═══════════════════════════════════════════
+     VIEW 1: CLIENT INTAKE FORM
+════════════════════════════════════════════ -->
+<div id="view-form" class="view active">
+<div class="form-wrapper">
+
+  <div class="intro-card">
+    <p>Thank you for your interest in Paper Crane Gardens. To make the most of our time together, I ask that you complete this intake form <strong>before our consultation</strong>. Your answers allow me to arrive at our meeting already researching your site, curating plant palette ideas, and thinking through design solutions tailored to your goals.</p>
+    <p>Answer as thoroughly as you can — the more you share, the more prepared and personalized your consultation experience will be. If you are unsure of something, just say so or leave it blank.</p>
+  </div>
+
+  <form id="intakeForm" name="consultation-intake" method="POST" data-netlify="true">
+    <input type="hidden" name="form-name" value="consultation-intake">
+
+    <!-- SECTION 0: Contact -->
+    <div class="form-section">
+      <div class="section-label">
+        <div class="section-num">①</div>
+        <h2>About You</h2>
+      </div>
+      <div class="two-col">
+        <div class="field">
+          <label>Your Name</label>
+          <input type="text" name="clientName" placeholder="First and last name" required>
+        </div>
+        <div class="field">
+          <label>Email Address</label>
+          <input type="email" name="clientEmail" placeholder="your@email.com" required>
+        </div>
+      </div>
+      <div class="two-col">
+        <div class="field">
+          <label>Phone Number</label>
+          <input type="tel" name="clientPhone" placeholder="(503) 000-0000">
+        </div>
+        <div class="field">
+          <label>Property Address</label>
+          <input type="text" name="propertyAddress" placeholder="City / neighborhood is fine">
+        </div>
+      </div>
+      <div class="field">
+        <label>Preferred Consultation Date / Timeline</label>
+        <div class="hint">Do you have a particular timeframe in mind? Is there a deadline (event, season, sale)?</div>
+        <textarea name="timeline" rows="2" placeholder="e.g. Spring 2026, flexible, before June..."></textarea>
+      </div>
+    </div>
+
+    <!-- SECTION 1: The Space -->
+    <div class="form-section">
+      <div class="section-label">
+        <div class="section-num">②</div>
+        <h2>Your Garden Space</h2>
+      </div>
+      <div class="field">
+        <label>Which Areas Are We Designing?</label>
+        <div class="hint">Examples: entire property, front yard only, backyard, side yard, specific garden bed. Include approximate square footage if known.</div>
+        <textarea name="gardenAreas" placeholder="e.g. Full backyard (~2,500 sqft) and the front foundation bed (~400 sqft)..."></textarea>
+      </div>
+      <div class="field">
+        <label>How Would You Describe the Current State?</label>
+        <div class="hint">Overgrown? Blank slate? Existing mature trees? Lawn to remove?</div>
+        <textarea name="currentState" rows="2" placeholder="e.g. Mostly lawn with a few overgrown shrubs along the fence..."></textarea>
+      </div>
+      <div class="two-col">
+        <div class="field">
+          <label>Sun Exposure</label>
+          <select name="sunExposure">
+            <option value="">-- Select --</option>
+            <option>Full sun (6+ hours)</option>
+            <option>Mostly sun (4–6 hours)</option>
+            <option>Part shade (2–4 hours)</option>
+            <option>Full shade (under 2 hours)</option>
+            <option>Mixed / varies by area</option>
+            <option>Not sure</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Soil Conditions (if known)</label>
+          <select name="soilConditions">
+            <option value="">-- Select --</option>
+            <option>Heavy clay (slow draining)</option>
+            <option>Sandy / fast draining</option>
+            <option>Loamy / average</option>
+            <option>Rocky or compacted</option>
+            <option>Not sure</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 2: Goals -->
+    <div class="form-section">
+      <div class="section-label">
+        <div class="section-num">③</div>
+        <h2>Goals & Priorities</h2>
+      </div>
+      <div class="field">
+        <label>What Are Your Top Priorities for This Garden?</label>
+        <div class="hint">Rank or list what matters most — beauty, food production, habitat, low maintenance, privacy, etc.</div>
+        <textarea name="priorities" placeholder="e.g. 1. A welcoming front garden with year-round interest. 2. More privacy from the street. 3. Attracting hummingbirds and butterflies..."></textarea>
+      </div>
+      <div class="field">
+        <label>Landscape Amenities & Features You Are Interested In</label>
+        <div class="hint">Select all that apply.</div>
+        <div class="check-grid">
+          <label class="check-item"><input type="checkbox" name="amenities" value="Native plants"> <span>Native plants</span></label>
+          <label class="check-item"><input type="checkbox" name="amenities" value="Pollinator habitat"> <span>Pollinator habitat</span></label>
+          <label class="check-item"><input type="checkbox" name="amenities" value="Wildlife / bird habitat"> <span>Wildlife / bird habitat</span></label>
+          <label class="check-item"><input type="checkbox" name="amenities" value="Edible / food garden"> <span>Edible / food garden</span></label>
+          <label class="check-item"><input type="checkbox" name="amenities" value="Food forest"> <span>Food forest</span></label>
+          <label class="check-item"><input type="checkbox" name="amenities" value="Raised beds"> <span>Raised beds</span></label>
+          <label class="check-item"><input type="checkbox" name="amenities" value="Lawn removal"> <span>Lawn removal</span></label>
+          <label class="check-item"><input type="checkbox" name="amenities" value="Rain garden / stormwater"> <span>Rain garden / stormwater</span></label>
+          <label class="check-item"><input type="checkbox" name="amenities" value="Drought-tolerant planting"> <span>Drought-tolerant planting</span></label>
+          <label class="check-item"><input type="checkbox" name="amenities" value="Walkways / paths"> <span>Walkways / paths</span></label>
+          <label class="check-item"><input type="checkbox" name="amenities" value="Pergola / arbor / trellis"> <span>Pergola / arbor / trellis</span></label>
+          <label class="check-item"><input type="checkbox" name="amenities" value="Privacy screening"> <span>Privacy screening</span></label>
+          <label class="check-item"><input type="checkbox" name="amenities" value="Water feature"> <span>Water feature</span></label>
+          <label class="check-item"><input type="checkbox" name="amenities" value="Outdoor seating / patio"> <span>Outdoor seating / patio</span></label>
+          <label class="check-item"><input type="checkbox" name="amenities" value="Backyard Habitat Certification"> <span>Backyard Habitat Cert.</span></label>
+          <label class="check-item"><input type="checkbox" name="amenities" value="Compost / soil health"> <span>Compost / soil health</span></label>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 3: Aesthetic -->
+    <div class="form-section">
+      <div class="section-label">
+        <div class="section-num">④</div>
+        <h2>Aesthetic & Style</h2>
+      </div>
+      <div class="field">
+        <label>How Would You Describe Your Garden Aesthetic?</label>
+        <div class="hint">Examples: formal and symmetrical, naturalistic / wildlife garden, cottage / romantic, modern / architectural, Japanese-inspired, Pacific Northwest woodland, meadow / prairie, edible abundance, Mediterranean. Feel free to describe your own.</div>
+        <textarea name="aesthetic" placeholder="e.g. I love a naturalistic, slightly wild look — layered plantings, lots of texture, nothing too manicured..."></textarea>
+      </div>
+      <div class="field">
+        <label>Color Palette</label>
+        <div class="hint">What flower colors appeal to you? Are you drawn to vibrant, saturated colors or softer pastels? Are there any colors you would absolutely not want in your garden?</div>
+        <textarea name="colorPalette" placeholder="e.g. I love purples, blues, and soft whites. I prefer pastels over bright reds or oranges. No yellow flowers please..."></textarea>
+      </div>
+      <div class="field">
+        <label>Specific Plants You Would Love to See Included</label>
+        <div class="hint">Common or Latin names welcome. If unsure, describe what you like (e.g. "big dramatic leaves," "fragrant plants," "ornamental grasses").</div>
+        <textarea name="specificPlants" rows="3" placeholder="e.g. Japanese maple, peonies, lavender, something with interesting bark for winter interest..."></textarea>
+      </div>
+      <div class="field">
+        <label>Plants or Elements You Want to Avoid</label>
+        <textarea name="plantsToAvoid" rows="2" placeholder="e.g. roses (too much maintenance), thorny plants (have young children), bamboo..."></textarea>
+      </div>
+    </div>
+
+    <!-- SECTION 4: Practical -->
+    <div class="form-section">
+      <div class="section-label">
+        <div class="section-num">⑤</div>
+        <h2>Practical Considerations</h2>
+      </div>
+      <div class="field">
+        <label>How Do You Plan to Water / Irrigate?</label>
+        <div class="check-grid">
+          <label class="check-item"><input type="radio" name="irrigation" value="Automated sprinkler system"> <span>Automated sprinkler</span></label>
+          <label class="check-item"><input type="radio" name="irrigation" value="Drip irrigation"> <span>Drip irrigation</span></label>
+          <label class="check-item"><input type="radio" name="irrigation" value="Hand watering with hose"> <span>Hand watering / hose</span></label>
+          <label class="check-item"><input type="radio" name="irrigation" value="No supplemental water (rain-fed)"> <span>No supplemental water</span></label>
+          <label class="check-item"><input type="radio" name="irrigation" value="Combination / not sure yet"> <span>Combination / not sure</span></label>
+        </div>
+      </div>
+      <div class="field">
+        <label>Who Will Install and Maintain the Garden?</label>
+        <div class="check-grid">
+          <label class="check-item"><input type="radio" name="installMaintain" value="I want Paper Crane Gardens to do everything"> <span>I want PCG to do everything</span></label>
+          <label class="check-item"><input type="radio" name="installMaintain" value="I will install, I want PCG to maintain"> <span>I install, PCG maintains</span></label>
+          <label class="check-item"><input type="radio" name="installMaintain" value="PCG installs, I will maintain"> <span>PCG installs, I maintain</span></label>
+          <label class="check-item"><input type="radio" name="installMaintain" value="I will do everything myself (consultation only)"> <span>DIY — consultation only</span></label>
+        </div>
+      </div>
+      <div class="field">
+        <label>Budget Range</label>
+        <div class="hint">This helps me tailor recommendations to what is realistic for your project. All budgets are welcome.</div>
+        <select name="budget">
+          <option value="">-- Select a range --</option>
+          <option>Under $2,000 (consultation / coaching focus)</option>
+          <option>$2,000 – $5,000</option>
+          <option>$5,000 – $10,000</option>
+          <option>$10,000 – $20,000</option>
+          <option>$20,000 – $50,000</option>
+          <option>$50,000+ (estate / full property)</option>
+          <option>Prefer to discuss in person</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Pets or Young Children?</label>
+        <div class="hint">This helps me ensure the plant palette is safe for your household.</div>
+        <div class="check-grid">
+          <label class="check-item"><input type="checkbox" name="household" value="Young children"> <span>Young children</span></label>
+          <label class="check-item"><input type="checkbox" name="household" value="Dogs"> <span>Dogs</span></label>
+          <label class="check-item"><input type="checkbox" name="household" value="Cats"> <span>Cats</span></label>
+          <label class="check-item"><input type="checkbox" name="household" value="Chickens / backyard birds"> <span>Chickens / backyard birds</span></label>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 5: Anything Else -->
+    <div class="form-section">
+      <div class="section-label">
+        <div class="section-num">⑥</div>
+        <h2>Anything Else?</h2>
+      </div>
+      <div class="field">
+        <label>Is There Anything Else I Should Know Before We Meet?</label>
+        <div class="hint">Challenging site conditions, neighbor considerations, HOA restrictions, a particular vision you haven't been able to describe yet — share it here.</div>
+        <textarea name="additionalNotes" rows="4" placeholder="Feel free to share anything that feels relevant..."></textarea>
+      </div>
+      <div class="field">
+        <label>Do You Have Photos of Gardens You Find Appealing?</label>
+        <div class="hint">Paste links to Pinterest boards, Houzz collections, Instagram posts, or Google Photos albums below. (File uploads available upon request.)</div>
+        <textarea name="inspirationLinks" rows="3" placeholder="https://pinterest.com/... or https://houzz.com/..."></textarea>
+      </div>
+    </div>
+
+    <button type="submit" class="submit-btn">Submit Intake Form & Schedule Your Consultation →</button>
+
+  </form>
+</div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     VIEW 2: AI RESEARCH BRIEF
+════════════════════════════════════════════ -->
+<div id="view-research" class="view">
+<div class="research-wrapper">
+
+  <div class="research-header">
+    <div>
+      <h2>Pre-Consultation Research Brief</h2>
+      <div class="client-name" id="briefClientName"></div>
+    </div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;">
+      <button class="print-btn" onclick="window.print()">⬇ Print / Save PDF</button>
+      <button class="back-btn" onclick="goBack()">← New Form</button>
+    </div>
+  </div>
+
+  <div id="errorMsg" class="error-msg" style="display:none;"></div>
+
+  <div class="api-key-notice" id="apiKeySection">
+    <strong>API Key Required</strong> — This tool calls the Anthropic API to generate your research brief. Enter your API key below to proceed. (Keys are never stored and are only used for this session.)
+    <input type="password" id="apiKeyInput" placeholder="sk-ant-..." autocomplete="off">
+    <button class="submit-btn" style="margin-top:10px;" onclick="startResearch()">Generate Pre-Consultation Brief</button>
+  </div>
+
+  <div id="researchContent" style="display:none;">
+    <!-- Consultation Summary -->
+    <div class="summary-box">
+      <h3>Consultation Overview</h3>
+      <p id="summaryText"></p>
+    </div>
+
+    <div class="research-grid">
+      <!-- Site Reading -->
+      <div class="research-card">
+        <div class="card-head">
+          <h3>Site Reading</h3>
+          <span class="badge">Analysis</span>
+        </div>
+        <div class="card-body" id="siteReading">
+          <div class="loading-state"><div class="spinner"></div><p>Analyzing site conditions...</p></div>
+        </div>
+      </div>
+
+      <!-- Design Direction -->
+      <div class="research-card">
+        <div class="card-head">
+          <h3>Design Direction</h3>
+          <span class="badge">Strategy</span>
+        </div>
+        <div class="card-body" id="designDirection">
+          <div class="loading-state"><div class="spinner"></div><p>Developing design strategy...</p></div>
+        </div>
+      </div>
+
+      <!-- Plant Palette -->
+      <div class="research-card full">
+        <div class="card-head">
+          <h3>Suggested Plant Palette</h3>
+          <span class="badge">Recommendations</span>
+        </div>
+        <div class="card-body" id="plantPalette">
+          <div class="loading-state"><div class="spinner"></div><p>Curating plant recommendations...</p></div>
+        </div>
+      </div>
+
+      <!-- Questions to Ask -->
+      <div class="research-card">
+        <div class="card-head">
+          <h3>Questions to Ask On-Site</h3>
+          <span class="badge">Consultation</span>
+        </div>
+        <div class="card-body" id="consultQuestions">
+          <div class="loading-state"><div class="spinner"></div><p>Preparing questions...</p></div>
+        </div>
+      </div>
+
+      <!-- Flags & Considerations -->
+      <div class="research-card">
+        <div class="card-head">
+          <h3>Flags & Considerations</h3>
+          <span class="badge">Notes</span>
+        </div>
+        <div class="card-body" id="flagsSection">
+          <div class="loading-state"><div class="spinner"></div><p>Identifying considerations...</p></div>
+        </div>
+      </div>
+
+      <!-- Scope & Pricing Guidance -->
+      <div class="research-card full">
+        <div class="card-head">
+          <h3>Scope & Pricing Guidance</h3>
+          <span class="badge">Business</span>
+        </div>
+        <div class="card-body" id="pricingGuidance">
+          <div class="loading-state"><div class="spinner"></div><p>Calculating scope...</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<script>
+// ── Collect form data ──
+let formData = {};
+
+document.getElementById('intakeForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const fd = new FormData(this);
+
+  // Collect form data for internal research brief (still available if needed)
+  formData = {};
+  for (let [key, val] of fd.entries()) {
+    if (formData[key]) {
+      formData[key] = Array.isArray(formData[key]) ? [...formData[key], val] : [formData[key], val];
+    } else {
+      formData[key] = val;
+    }
+  }
+  ['amenities','household'].forEach(name => {
+    formData[name] = [...document.querySelectorAll(`input[name="${name}"]:checked`)].map(i => i.value);
+  });
+  const irrigation = document.querySelector('input[name="irrigation"]:checked');
+  formData.irrigation = irrigation ? irrigation.value : 'Not specified';
+  const install = document.querySelector('input[name="installMaintain"]:checked');
+  formData.installMaintain = install ? install.value : 'Not specified';
+
+  // Submit to Netlify Forms
+  try {
+    await fetch('/', { method: 'POST', body: fd });
+  } catch(err) { /* proceed regardless */ }
+
+  // Redirect to Calendly booking page
+  // CALENDLY_URL — replace with your booking link once Calendly is set up
+  window.location.href = 'CALENDLY_URL_PLACEHOLDER';
+});
+
+function goBack() {
+  document.getElementById('view-research').classList.remove('active');
+  document.getElementById('view-form').classList.add('active');
+  document.getElementById('researchContent').style.display = 'none';
+  document.getElementById('apiKeySection').style.display = 'block';
+  document.getElementById('errorMsg').style.display = 'none';
+}
+
+// ── Format intake into prompt ──
+function buildPrompt() {
+  const amenities = Array.isArray(formData.amenities) ? formData.amenities.join(', ') : (formData.amenities || 'None specified');
+  const household = Array.isArray(formData.household) ? formData.household.join(', ') : 'None specified';
+
+  return `You are assisting Taylor Real, owner of Paper Crane Gardens LLC — a high-end ecological landscape design and maintenance firm in Hillsboro, Oregon (Portland metro area). Taylor is an OSU Extension Service Certified Master Gardener, a licensed OLCB Landscape Professional, and a Backyard Habitat Certified practitioner. She specializes in Pacific Northwest native plants, ecological design, edible gardens, and fine horticultural maintenance.
+
+A prospective client has completed a consultation intake form. Based on their responses, generate a structured pre-consultation research brief that Taylor can review before meeting this client. This brief replaces cold-start consultations — Taylor arrives already informed, with plant ideas and design strategy ready.
+
+=== CLIENT INTAKE RESPONSES ===
+Name: ${formData.clientName || 'Not provided'}
+Property Location: ${formData.propertyAddress || 'Not provided'}
+Timeline: ${formData.timeline || 'Not specified'}
+
+GARDEN AREAS: ${formData.gardenAreas || 'Not specified'}
+CURRENT STATE: ${formData.currentState || 'Not specified'}
+SUN EXPOSURE: ${formData.sunExposure || 'Not specified'}
+SOIL CONDITIONS: ${formData.soilConditions || 'Not specified'}
+
+PRIORITIES: ${formData.priorities || 'Not specified'}
+DESIRED AMENITIES: ${amenities}
+
+AESTHETIC: ${formData.aesthetic || 'Not specified'}
+COLOR PALETTE: ${formData.colorPalette || 'Not specified'}
+SPECIFIC PLANTS REQUESTED: ${formData.specificPlants || 'None specified'}
+PLANTS TO AVOID: ${formData.plantsToAvoid || 'None'}
+
+IRRIGATION: ${formData.irrigation}
+INSTALL/MAINTAIN: ${formData.installMaintain}
+BUDGET: ${formData.budget || 'Not specified'}
+HOUSEHOLD (pets/children): ${household}
+
+ADDITIONAL NOTES: ${formData.additionalNotes || 'None'}
+INSPIRATION LINKS: ${formData.inspirationLinks || 'None provided'}
+
+=== YOUR TASK ===
+Generate a JSON object with these exact keys. Be specific, actionable, and tailored to the PNW/Portland climate (USDA Zone 8b). Prioritize native Pacific Northwest plants when appropriate to the client's goals. Respond ONLY with valid JSON, no markdown fences, no preamble.
+
+{
+  "summary": "2-3 sentence overview of who this client is, what they want, and what the consultation opportunity looks like",
+  "siteReading": ["bullet 1", "bullet 2", "bullet 3", "bullet 4"],
+  "designDirection": ["bullet 1", "bullet 2", "bullet 3", "bullet 4"],
+  "plants": [
+    {"common": "Plant Name", "latin": "Genus species", "tags": ["native","pollinator"], "reason": "Why this fits"},
+    ...8-12 plants total
+  ],
+  "consultQuestions": ["question 1", "question 2", "question 3", "question 4", "question 5"],
+  "flags": ["consideration 1", "consideration 2", "consideration 3"],
+  "pricingGuidance": "2-3 sentences on likely scope, recommended package(s) from Paper Crane Gardens service menu (Landscape Design $1200+, Installation $1500+, Ecological Maintenance $900-1500/mo, Consultation $100/hr), and any notes on budget fit or upsell opportunity"
+}`;
+}
+
+// ── Call Anthropic API ──
+async function startResearch() {
+  const key = document.getElementById('apiKeyInput').value.trim();
+  if (!key) {
+    document.getElementById('errorMsg').textContent = 'Please enter your Anthropic API key.';
+    document.getElementById('errorMsg').style.display = 'block';
+    return;
+  }
+
+  document.getElementById('errorMsg').style.display = 'none';
+  document.getElementById('apiKeySection').style.display = 'none';
+  document.getElementById('researchContent').style.display = 'block';
+
+  try {
+    const response = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'x-api-key': key,
+        'anthropic-version': '2023-06-01'
+      },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-6',
+        max_tokens: 2500,
+        messages: [{ role: 'user', content: buildPrompt() }]
+      })
+    });
+
+    if (!response.ok) {
+      const err = await response.json();
+      throw new Error(err.error?.message || `API error ${response.status}`);
+    }
+
+    const data = await response.json();
+    const rawText = data.content.map(b => b.type === 'text' ? b.text : '').join('');
+
+    let parsed;
+    try {
+      const clean = rawText.replace(/```json|```/g, '').trim();
+      parsed = JSON.parse(clean);
+    } catch {
+      throw new Error('Could not parse AI response. Please try again.');
+    }
+
+    renderBrief(parsed);
+
+  } catch (err) {
+    document.getElementById('researchContent').style.display = 'none';
+    document.getElementById('apiKeySection').style.display = 'block';
+    document.getElementById('errorMsg').textContent = err.message;
+    document.getElementById('errorMsg').style.display = 'block';
+  }
+}
+
+// ── Render the brief ──
+function renderBrief(d) {
+  // Summary
+  document.getElementById('summaryText').textContent = d.summary || '';
+
+  // Site Reading
+  renderList('siteReading', d.siteReading);
+
+  // Design Direction
+  renderList('designDirection', d.designDirection);
+
+  // Plant Palette
+  const plantEl = document.getElementById('plantPalette');
+  if (d.plants && d.plants.length) {
+    const grid = document.createElement('div');
+    grid.className = 'plant-grid';
+    d.plants.forEach(p => {
+      const chip = document.createElement('div');
+      chip.className = 'plant-chip';
+      const tagTypes = { native: '', pollinator: 'pollinator', edible: 'edible', shade: 'shade' };
+      const tagsHtml = (p.tags || []).map(t => {
+        const cls = tagTypes[t.toLowerCase()] || '';
+        return `<span class="ptag ${cls}">${t}</span>`;
+      }).join('');
+      chip.innerHTML = `<div class="common">${p.common}</div><div class="latin">${p.latin || ''}</div><div class="tags">${tagsHtml}</div><div style="margin-top:6px;font-size:0.78rem;color:#666;">${p.reason || ''}</div>`;
+      grid.appendChild(chip);
+    });
+    plantEl.innerHTML = '';
+    plantEl.appendChild(grid);
+  } else {
+    plantEl.innerHTML = '<p>No plant recommendations generated.</p>';
+  }
+
+  // Questions
+  renderList('consultQuestions', d.consultQuestions);
+
+  // Flags
+  renderList('flags', d.flags);
+
+  // Pricing
+  const pricingEl = document.getElementById('pricingGuidance');
+  pricingEl.innerHTML = `<p>${d.pricingGuidance || ''}</p>`;
+}
+
+function renderList(id, items) {
+  const el = document.getElementById(id);
+  if (!items || !items.length) {
+    el.innerHTML = '<p>No information generated.</p>';
+    return;
+  }
+  const ul = document.createElement('ul');
+  items.forEach(item => {
+    const li = document.createElement('li');
+    li.textContent = item;
+    ul.appendChild(li);
+  });
+  el.innerHTML = '';
+  el.appendChild(ul);
+}
+</script>
+</body>
+</html>

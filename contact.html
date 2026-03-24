@@ -245,20 +245,21 @@ body::after {
       </div>
 
       <div class="contact-form-wrap reveal d1">
-        <form id="contactForm" onsubmit="handleSubmit(event)">
+        <form id="contactForm" name="inquiry" method="POST" data-netlify="true" onsubmit="handleSubmit(event)">
+          <input type="hidden" name="form-name" value="inquiry">
           <div class="form-heading">Request a Consultation</div>
           <div class="form-subhead">Tell us about your project</div>
           <div class="row-2">
-            <div class="fg"><label class="flabel">First Name *</label><input type="text" class="finput" placeholder="Jane" required></div>
-            <div class="fg"><label class="flabel">Last Name *</label><input type="text" class="finput" placeholder="Smith" required></div>
+            <div class="fg"><label class="flabel">First Name *</label><input type="text" name="first-name" class="finput" placeholder="Jane" required></div>
+            <div class="fg"><label class="flabel">Last Name *</label><input type="text" name="last-name" class="finput" placeholder="Smith" required></div>
           </div>
-          <div class="fg"><label class="flabel">Email Address *</label><input type="email" class="finput" placeholder="jane@example.com" required></div>
-          <div class="fg"><label class="flabel">Phone</label><input type="tel" class="finput" placeholder="(503) 000-0000"></div>
-          <div class="fg"><label class="flabel">City</label><input type="text" class="finput" placeholder="City Name"></div>
+          <div class="fg"><label class="flabel">Email Address *</label><input type="email" name="email" class="finput" placeholder="jane@example.com" required></div>
+          <div class="fg"><label class="flabel">Phone</label><input type="tel" name="phone" class="finput" placeholder="(503) 000-0000"></div>
+          <div class="fg"><label class="flabel">City</label><input type="text" name="city" class="finput" placeholder="City Name"></div>
           <div class="fg">
             <label class="flabel">I'm interested in</label>
             <div class="fselect-wrap">
-              <select class="fselect">
+              <select name="service" class="fselect">
                 <option value="">— Select a service —</option>
                 <option>Landscape Design ($1,200+)</option>
                 <option>Landscape Installation ($1,500+)</option>
@@ -268,7 +269,7 @@ body::after {
               </select>
             </div>
           </div>
-          <div class="fg"><label class="flabel">Tell us about your project</label><textarea class="ftextarea" placeholder="Current state of your garden, vision, any specific goals or challenges…"></textarea></div>
+          <div class="fg"><label class="flabel">Tell us about your project</label><textarea name="project-details" class="ftextarea" placeholder="Current state of your garden, vision, any specific goals or challenges…"></textarea></div>
           <button type="submit" class="fsubmit">Send Inquiry <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg></button>
         </form>
         <div id="formSuccess">
@@ -282,17 +283,34 @@ body::after {
 </section>
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-function handleSubmit(e) {
+async function handleSubmit(e) {
   e.preventDefault();
   const form = document.getElementById('contactForm');
-  const success = document.getElementById('formSuccess');
-  form.style.cssText = 'opacity:0;transform:translateY(-6px);transition:all .4s;';
-  setTimeout(() => {
-    form.style.display = 'none';
-    success.style.display = 'block';
-    success.style.cssText = 'display:block;opacity:0;transform:translateY(6px);transition:all .4s;';
-    requestAnimationFrame(() => { success.style.opacity='1'; success.style.transform='none'; });
-  }, 380);
+  const service = form.querySelector('[name="service"]').value;
+
+  // Submit to Netlify
+  try {
+    await fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(new FormData(form)).toString()
+    });
+  } catch(err) { /* proceed regardless */ }
+
+  if (!service || service === "Not sure yet — let's talk") {
+    // Show thank-you for general inquiries
+    form.style.cssText = 'opacity:0;transform:translateY(-6px);transition:all .4s;';
+    setTimeout(() => {
+      form.style.display = 'none';
+      const success = document.getElementById('formSuccess');
+      success.style.display = 'block';
+      success.style.cssText = 'display:block;opacity:0;transform:translateY(6px);transition:all .4s;';
+      requestAnimationFrame(() => { success.style.opacity='1'; success.style.transform='none'; });
+    }, 380);
+  } else {
+    // Send to detailed intake form for consultation services
+    window.location.href = 'intake.html';
+  }
 }
 </script>
 
